@@ -10,10 +10,7 @@
 // ace, 2-10, jack, king, and queen
 
 // suits of a card are:
-// hearts, diamnds, clubs, spades
-
-//using Card = int[2];
-//using Card = std::pair<int, int>;
+// hearts, diamonds, clubs, spades
 
 enum Rank // An enumeration type
 {
@@ -40,23 +37,44 @@ enum Suit
     Spades,
 };
 
-struct Card
+// A playing card (in a standard deck) is a pair of rank and suit
+class Card
 {
+
+private:
     Rank rank;
     Suit suit;
+
+
+public:
+
+    Card() = default;
+
+    // Construct a card with a rank and suit.
+    Card(Rank r, Suit s)
+        : rank(r), suit(s) // member initializer list
+    {}
+
+    // Copy constructor.
+    Card(const Card& c)
+        : rank(c.rank), suit(c.suit)
+    {}
+
+    // Copy assignment Operator
+    Card& operator=(const Card& c)
+    {
+        rank = c.rank;
+        suit = c.suit;
+        return *this;
+    }
+
+// Accessor and Observer functions
+
+    Rank get_rank() const;
+    Suit get_suit() const;
+
 };
 
-#endif // CARD_HPP_INCLUDED
+#endif
 
 
-
-// touch CMakeLists.txt
-
-// add_executable(war
-        //main.cpp
-        //card.cpp
-
-// git add CMakeLists.txt
-// git commit -a
-
-// look for CMAKE_BUILD_TYPE

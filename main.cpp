@@ -2,24 +2,31 @@
 // All Rights Reserved
 
 #include <iostream>
-
+#include <vector>
 #include "card.hpp"
 
 int main()
 {
-    Rank r1 = Two;
-    Rank r2 = Ace;
-    std::cout << (r1 == r2) << std::endl;
+    // Create a deck of cards.
+    std::vector<Card> deck;
+    deck.reserve(52); //Allocates memory for the cards
 
-    // Widening conversion
-    int n = Jack;
-    std::cout << n << std::endl;
+    //Trying to initialize in one line
+   // boost::push_back(deck, boost::irange(1, 13));
 
-    // Narrowing conversion. Bad.
-    // Rank r3 = 4; // error: cannot convert.
+    //Widens the ranks and suits.
+    for (int r = Ace; r <= King; ++r)
+    {
+        for (int s = Hearts; s <= Spades; ++s)
+        {
+            Card c{static_cast<Rank>(r), static_cast<Suit>(s)};
+            deck.push_back(c);
+        }
+    }
 
-    Card c1 {Ace, Spades};
-    Card c2 {Four, Hearts};
-
-    //c1.rank = Ten;
+    // Range_base for loop
+    for (Card c : deck)
+    {
+        std::cout << c.get_rank() << ' ' << c.get_suit() << std::endl;
+    }
 }
