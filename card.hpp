@@ -5,6 +5,7 @@
 #define CARD_HPP_INCLUDED
 
 #include <utility>
+#include <iosfwd>
 
 // Ranks of a c card are:
 // ace, 2-10, jack, king, and queen
@@ -74,6 +75,17 @@ public:
     Suit get_suit() const;
 
 };
+bool operator == (Card a, Card b);
+bool operator != (Card a, Card b);
+bool operator < (Card a, Card b);
+bool operator > (Card a, Card b);
+bool operator <= (Card a, Card b);
+bool operator >= (Card a, Card b);
+
+
+std::ostream& operator << (std::ostream& os, Card c);
+std::ostream& operator << (std::ostream& os, Rank r);
+std::ostream& operator << (std::ostream& os, Suit s);
 
 #endif
 
