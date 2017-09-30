@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1506806655 source:c:\users\z70\desktop\object oriented pro\old maid\card.cpp
+	"card.hpp"
+	<iostream>
+
+1506806655 c:\users\z70\desktop\object oriented pro\old maid\card.hpp
+	<iosfwd>
+
+1506806655 source:c:\users\z70\desktop\object oriented pro\old maid\deck.cpp
+	"deck.hpp"
+	<iostream>
+	<random>
+	<algorithm>
+
+1506806655 c:\users\z70\desktop\object oriented pro\old maid\deck.hpp
+	<iostream>
+	<vector>
+	<random>
+	<algorithm>
+	"card.hpp"
+
+1506811378 source:c:\users\z70\desktop\object oriented pro\old maid\main.cpp
+	"card.hpp"
+	"deck.hpp"
+	"player.hpp"
+	<iostream>
+	<algorithm>
+	<deque>
+	<string>
+	<random>
+
+1506806655 c:\users\z70\desktop\object oriented pro\old maid\player.hpp
+	<vector>
+	<iostream>
+	<algorithm>
+	"card.hpp"
+	"deck.hpp"
+
+1506806655 source:c:\users\z70\desktop\object oriented pro\old maid\player.cpp
+	"player.hpp"
+
