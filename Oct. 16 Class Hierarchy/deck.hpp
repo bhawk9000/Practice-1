@@ -7,7 +7,6 @@
 #include <vector>
 #include "card.hpp"
 
-// Don't write a class if you don't have to
 struct Deck
 {
     std::vector<Card*> cards;
